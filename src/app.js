@@ -1,5 +1,18 @@
 // console.log(`app.js is now runing`);
 
+class IndecisionApp extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Action />
+        <Options />
+        <AddOption />
+      </div>
+    );
+  }
+}
+
 class Header extends React.Component {
   render() {
     return (
@@ -24,10 +37,23 @@ class Action extends React.Component {
 class Options extends React.Component {
   render() {
     return (
-      <ol>
-        <li>Option</li>
-        <li>Another option</li>
-      </ol>
+      <div>
+        Options component
+        <Option />
+      </div>
+    );
+  }
+}
+
+class Option extends React.Component {
+  render() {
+    return (
+      <div>
+        <ol>
+          <li>Option</li>
+          <li>Another option</li>
+        </ol>
+      </div>
     );
   }
 }
@@ -43,14 +69,5 @@ class AddOption extends React.Component {
   }
 }
 
-const jsx = (
-  <div>
-    <Header />
-    <Action />
-    <Options />
-    <AddOption />
-  </div>
-);
-
 const appRoot = document.getElementById('app');
-ReactDOM.render(jsx, appRoot);
+ReactDOM.render(<IndecisionApp />, appRoot);
