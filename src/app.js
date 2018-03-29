@@ -12,6 +12,16 @@ class IndecisionApp extends React.Component {
     }
   }
 
+  componentDidMount() {
+    console.log('fetching data');
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('saving data');
+  }
+  commponentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
   handleDeleteOptions() {
     this.setState(() => ({ options: [] }));
   }
@@ -87,7 +97,7 @@ const Action = (props) => {
         disabled={!props.hasOptions}
       >
         What should I do?
-        </button>
+      </button>
     </div>
   );
 };
